@@ -33,9 +33,9 @@
                         <td><fmt:formatDate value="${todo.targetDate}"
                                             pattern="dd/MM/yyyy" /></td>
                         <td><a type="button" class="btn btn-success"
-                               href="/update-todo?id=${todo.Id}">Update</a>
+                               href="/update-todo?id=${todo.id}">Update</a>
                             <a type="button" class="btn btn-warning"
-                               href="/delete-todo?id=${todo.Id}">Delete</a></td>
+                               href="/delete-todo?id=${todo.id}">Delete</a></td>
                     </tr>
                 </c:forEach>
                 </tbody>

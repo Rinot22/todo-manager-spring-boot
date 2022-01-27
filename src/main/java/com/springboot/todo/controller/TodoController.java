@@ -21,11 +21,13 @@ import java.util.Date;
 @Controller
 public class TodoController {
 
+    @Autowired
     private final ITodoService todoService;
 
     public TodoController(ITodoService todoService) {
         this.todoService = todoService;
     }
+
 
     @InitBinder
     public void initBinder(WebDataBinder binder) {
@@ -59,14 +61,14 @@ public class TodoController {
     }
 
     @RequestMapping(value = "/delete-todo", method = RequestMethod.GET)
-    public String deleteTodo(@RequestParam Integer id) {
+    public String deleteTodo(@RequestParam int id) {
         todoService.deleteTodo(id);
         // service.deleteTodo(id);
         return "redirect:/list-todos";
     }
 
     @RequestMapping(value = "/update-todo", method = RequestMethod.GET)
-    public String showUpdateTodoPage(@RequestParam Integer id, ModelMap model) {
+    public String showUpdateTodoPage(@RequestParam int id, ModelMap model) {
         Todo todo = todoService.getTodoById(id).get();
         model.put("todo", todo);
         return "todo";

@@ -24,7 +24,7 @@ public class TodoService implements ITodoService {
     }
 
     @Override
-    public Optional<Todo> getTodoById(Integer id) {
+    public Optional<Todo> getTodoById(int id) {
         return todoRepository.findById(id);
     }
 
@@ -41,7 +41,7 @@ public class TodoService implements ITodoService {
 
 
     @Override
-    public void deleteTodo(Integer id) {
+    public void deleteTodo(int id) {
         Optional<Todo> todo = todoRepository.findById(id);
         todo.ifPresent(todoRepository::delete);
     }

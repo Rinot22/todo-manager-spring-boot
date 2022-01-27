@@ -8,8 +8,8 @@ import java.util.Date;
 @Table(name = "todo")
 public class Todo {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private Integer Id;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private int id;
 
     private String userName;
 
@@ -29,13 +29,12 @@ public class Todo {
         this.targetDate = targetDate;
     }
 
-    public void setId(Integer id) {
-        this.Id = id;
+    public void setId(int id) {
+        this.id = id;
     }
 
-    @Id
-    public Integer getId() {
-        return Id;
+    public int getId() {
+        return id;
     }
 
     public String getUserName() {

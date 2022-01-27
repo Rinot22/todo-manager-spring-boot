@@ -9,13 +9,13 @@ import java.util.Optional;
 public interface ITodoService {
     List<Todo> getTodosByUser(String user);
 
-    Optional<Todo> getTodoById(Integer id);
+    Optional<Todo> getTodoById(int id);
 
     void updateTodo(Todo todo);
 
     void addTodo(String name, String desc, Date targetDate, boolean isDone);
 
-    void deleteTodo(Integer id);
+    void deleteTodo(int id);
 
     void saveTodo(Todo todo);
 }
